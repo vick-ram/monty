@@ -53,6 +53,5 @@ void pchar(stack_t **);
 void pstr(stack_t **);
 void rotl(stack_t **);
 void rotr(stack_t **);
-void _stack(stack_t **, unsigned int);
-void queue(stack_t **, unsigned int);
+
 #endif /*MONTY_H*/

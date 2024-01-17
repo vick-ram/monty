@@ -9,12 +9,15 @@
 void parseInstructions(char *line, stack_t **stack, unsigned int line_number)
 {
 	char *opcode = strtok(line, " \t\n");
-	int value = atoi(strtok(NULL, " \n\t"));
+	int value;
 
 	if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 		return;
 	if (strcmp(opcode, "push") == 0)
+	{
+		value = atoi(strtok(NULL, " \n\t"));
 		push(stack, value);
+	}
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack);
 	else if (strcmp(opcode, "pint") == 0)
@@ -43,8 +46,4 @@ void parseInstructions(char *line, stack_t **stack, unsigned int line_number)
 		rotl(stack);
 	else if (strcmp(opcode, "rotr") == 0)
 		rotr(stack);
-	else if (strcmp(opcode, "stack") == 0)
-		_stack(stack, line_number);
-	else if (strcmp(opcode, "queue") == 0)
-		queue(stack, line_number);
 }
