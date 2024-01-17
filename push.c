@@ -3,7 +3,6 @@
 *push - adds an element to a stack
 *@stack: - element of a stack
 *@value: - value to push
-*@line_number: - int param
 *Return: - returns nothing
 */
 void push(stack_t **stack, int value)

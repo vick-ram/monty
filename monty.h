@@ -18,9 +18,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -33,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void push(stack_t **stack, int);
@@ -43,4 +43,16 @@ void pint(stack_t **stack, unsigned int line_number);
 void parseInstructions(char *, stack_t **, unsigned int);
 void pop(stack_t **);
 void swap(stack_t **);
+void add(stack_t **);
+void nop(stack_t **);
+void sub(stack_t **);
+void divide(stack_t **);
+void mul(stack_t **);
+void mod(stack_t **);
+void pchar(stack_t **);
+void pstr(stack_t **);
+void rotl(stack_t **);
+void rotr(stack_t **);
+void _stack(stack_t **, unsigned int);
+void queue(stack_t **, unsigned int);
 #endif /*MONTY_H*/

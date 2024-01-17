@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <stdio.h>
 /**
 *main - entry point
 *@argc: int type cmd param

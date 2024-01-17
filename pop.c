@@ -2,7 +2,6 @@
 /**
 *pop - pops an element from a stack
 *@stack: stack type param
-*@line_number: number
 *Return - returns nothing
 */
 void pop(stack_t **stack)
@@ -11,7 +10,7 @@ void pop(stack_t **stack)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n");
+		fprintf(stderr, "can't pop an empty stack\n");
 		exit(EXIT_FAILURE);
 	}
 	*stack = (*stack)->next;

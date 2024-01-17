@@ -2,7 +2,6 @@
 /**
 *swap - swaps elements in stack
 *@stack: - stack element
-*@line_number: int type param
 *Return: - returns nothing
 */
 void swap(stack_t **stack)
@@ -11,7 +10,7 @@ void swap(stack_t **stack)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n");
+		fprintf(stderr, "can't swap, stack too short\n");
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->n = (*stack)->next->n;
