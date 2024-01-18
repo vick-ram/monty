@@ -2,15 +2,16 @@
 /**
 *swap - swaps elements in stack
 *@stack: - stack element
+*@line_number: -
 *Return: - returns nothing
 */
-void swap(stack_t **stack)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp = (*stack)->n;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "can't swap, stack too short\n");
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->n = (*stack)->next->n;

@@ -2,18 +2,16 @@
 /**
 *mul - multiplies the 2nd top with the top
 *@stack: - stack element
+*@line_number:
 *Return: - returns nothing
 */
-void mul(stack_t **stack)
+void mul(stack_t **stack, unsigned int line_number)
 {
-	int result;
-
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "can't mul, stack too short\n");
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	result = (*stack)->next->n * (*stack)->n;
-	(*stack)->next->n = result;
-	pop(stack);
+	(*stack)->next->n = (*stack)->next->n * (*stack)->n;
+	pop(stack, line_number);
 }

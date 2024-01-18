@@ -2,13 +2,14 @@
 /**
 *pchar - prints character at the topof stack
 *@stack: - stack element
+*@line_number:
 *Return: returns nothing
 */
-void pchar(stack_t **stack)
+void pchar(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "can't pchar, stack empty\n");
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n < 0 || (*stack)->n > 127)

@@ -7,6 +7,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,21 +38,22 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, int);
-void pall(stack_t **stack);
-void pint(stack_t **stack, unsigned int line_number);
-void parseInstructions(char *, stack_t **, unsigned int);
-void pop(stack_t **);
-void swap(stack_t **);
-void add(stack_t **);
-void nop(stack_t **);
-void sub(stack_t **);
-void divide(stack_t **);
-void mul(stack_t **);
-void mod(stack_t **);
-void pchar(stack_t **);
-void pstr(stack_t **);
-void rotl(stack_t **);
-void rotr(stack_t **);
-
+void push(stack_t **, unsigned int);
+void pall(stack_t **, unsigned int);
+void pint(stack_t **, unsigned int);
+void pop(stack_t **, unsigned int);
+void swap(stack_t **, unsigned int);
+void add(stack_t **, unsigned int);
+void nop(stack_t **, unsigned int);
+void sub(stack_t **, unsigned int);
+void divide(stack_t **, unsigned int);
+void mul(stack_t **, unsigned int);
+void mod(stack_t **, unsigned int);
+void pchar(stack_t **, unsigned int);
+void pstr(stack_t **, unsigned int);
+void rotl(stack_t **, unsigned int);
+void rotr(stack_t **, unsigned int);
+void _stack(stack_t **, unsigned int);
+void queue(stack_t **, unsigned int);
+int is_numeric(const char *);
 #endif /*MONTY_H*/

@@ -2,9 +2,10 @@
 /**
 *pstr - prints the string starting at the top
 *@stack: - stack elemeet
+*@line_number:
 *Return: - returns nothing
 */
-void pstr(stack_t **stack)
+void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr = *stack;
 
@@ -12,7 +13,7 @@ void pstr(stack_t **stack)
 	{
 		if (curr->n < 0 || curr->n > 127)
 		{
-			fprintf(stderr, "can't pstr, value out of range\n");
+			fprintf(stderr, "L%d: can't pstr, value out of range\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 		printf("%c", curr->n);

@@ -2,15 +2,14 @@
 /**
 *divide - divides the second top element by the top element
 *@stack: - stack element
+*@line_number:
 *Return: - returns nothing
 */
-void divide(stack_t **stack)
+void divide(stack_t **stack, unsigned int line_number)
 {
-	int result;
-
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "can't div, stack too short\n");
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
@@ -18,7 +17,6 @@ void divide(stack_t **stack)
 		fprintf(stderr, "division by zero\n");
 		exit(EXIT_FAILURE);
 	}
-	result = (*stack)->next->n / (*stack)->n;
-	(*stack)->next->n = result;
-	pop(stack);
+	(*stack)->next->n = (*stack)->next->n / (*stack)->n;
+	pop(stack, line_number);
 }
