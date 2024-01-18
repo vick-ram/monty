@@ -2,7 +2,7 @@
 /**
 *push - adds an element to a stack
 *@stack: - element of a stack
-*@line_number:
+*@line_number: - int type param
 *Return: - returns nothing
 */
 void push(stack_t **stack, unsigned int line_number)
@@ -31,8 +31,7 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	else
-		new_node->next = NULL;
-	*stack = new_node;
+	new_node->next = NULL;
 }
 /**
 *is_numeric - checks if numeric
